@@ -43,7 +43,7 @@ export const StarBackground = () => {
           position: "absolute",
           inset: 0,
           backgroundColor: "#0a0f0f",
-          backgroundImage: "url('/pattern.png')",
+          backgroundImage: "public\imgs\pattern.png",
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.02, // only affects background
