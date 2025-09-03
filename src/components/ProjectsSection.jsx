@@ -1,86 +1,60 @@
-const projects = [
+const lectures = [
   {
     id: 1,
-    title: "🛰 1U CubeSat Development",
-    description: `Led a team of five as GNC engineer to build a neural network-based trajectory predictor for Astrobee.
-Integrated it into ROS + Gazebo for control testing.
-Deployed payloads via STM32 on stratospheric balloon missions.`,
-    image: "projects/project1.png", // placeholder
-    tags: ["CVXPy", "Simulink", "ROS", "STM32"],
+    title: "Casablanca International Conference on Additive Manufacturing",
+    role: "Lecturer (Virtual)",
+    location: "Casablanca, Morocco · Apr 2024",
+    description:
+      "Presented 'Additive Manufacturing for Tire Treads Design for Outer Space Challenging Terrains' to 300+ attendees including ESA, Airbus, and European/African universities.",
+    image: "lectures/lecture1.png", // add your own image path
+    tags: ["Additive Manufacturing", "Aerospace", "International Lecture"],
   },
   {
     id: 2,
-    title: "🤖 NASA HERC Point Optimization",
-    description: `Collaborating with UNIVA (Mexico) to develop LP and path-planning algorithms to maximize NASA HERC points.
-Defined decision variables, constraints, and simulations combining LP with graph heuristics.`,
-    image: "projects/project1.png",
-    tags: ["Linear Programming", "Path Planning", "Simulation"],
+    title:
+      "LACCEI International Multi-Conference on Engineering, Education and Technology",
+    role: "Lecturer (Virtual)",
+    location: "Mexico City, Mexico · Jul 2025",
+    description:
+      "Presented 'Mechanical Design and Testing of 3D-Printed Non-Pneumatic Wheels for Human-Powered Vehicles' to Latin American researchers and academic leaders.",
+    image: "lectures/lecture2.png",
+    tags: ["Non-Pneumatic Wheels", "3D Printing", "STEM"],
   },
   {
     id: 3,
-    title: "🌿 Lichens Computer Vision Bioindicator",
-    description: `Developing a CV system to classify lichens as air-quality bioindicators.`,
-    image: "projects/project1.png",
-    tags: ["Python", "OpenCV", "Machine Learning"],
-  },
-  {
-    id: 4,
-    title: "♟ Robotic Chess System with KUKA Arm",
-    description: `Founder and lead engineer of an autonomous chess system with KUKA arm, ROS control, and custom PCB chessboard.
-Implemented motion planning, inverse kinematics, and EKI communication.`,
-    image: "projects/project1.png",
-    tags: ["ROS", "Python", "KUKA"],
-  },
-  {
-    id: 5,
-    title: "🔧 ABS Printing Optimization",
-    description: `Built two systems to improve industrial ABS printing: IoT-enabled enclosure reducing warping, and acetone vapor chamber achieving glossy finishes.
-Remote parameter control via mobile and Firebase dashboards.`,
-    image: "projects/project1.png",
-    tags: ["CAD", "MicroPython", "IoT"],
-  },
-  {
-    id: 6,
-    title: "🚀 NASA HERC 2024 Rover Design",
-    description: `Designed and fabricated rover tools, contributing to the "Most Improved Performance" award.
-Used SolidWorks, 3D printing, and CNC machining.`,
-    image: "projects/project1.png",
-    tags: ["SolidWorks", "3D Printing", "CNC"],
-  },
-  {
-    id: 7,
-    title: "Volunteering, Outreach & Lectures",
-    description: `Presented Additive Manufacturing and NASA HERC projects internationally (Morocco, Mexico).
-Delivered KUKA workshops and STEM outreach across Bolivia.
-Led 12 students to publish 3 peer-reviewed papers on NASA HERC innovations.`,
-    image: "projects/project1.png",
-    tags: ["STEM Outreach", "Lectures", "Workshops"],
+    title: "KUKA Robotic Arm Workshop – ITEC 2024",
+    role: "Workshop Lecturer",
+    location: "La Paz, Bolivia · May 2024",
+    description:
+      "Delivered practical sessions on KUKA arm operation, KRL programming, and ROS integration.",
+    image: "lectures/lecture3.png",
+    tags: ["Robotics", "KUKA", "Workshops"],
   },
 ];
 
-export const ProjectsSection = () => {
+export const LecturesSection = () => {
   return (
-    <section id="projects" className="py-24 px-4 relative">
+    <section id="lectures" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Featured <span className="text-primary">Projects</span>
+          Featured <span className="text-primary">Lectures</span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects. Each one highlights skills, innovation, and impact.
+          A selection of my international lectures, workshops, and conference talks.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {lectures.map((lecture) => (
             <div
-              key={project.id}
+              key={lecture.id}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
               <div className="h-48 overflow-hidden">
-                {project.image ? (
+                {lecture.image ? (
                   <img
-                    src={project.image}
-                    alt={project.title}
+                    src={lecture.image}
+                    alt={lecture.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 ) : (
@@ -92,7 +66,7 @@ export const ProjectsSection = () => {
 
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, idx) => (
+                  {lecture.tags.map((tag, idx) => (
                     <span
                       key={idx}
                       className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
@@ -102,9 +76,15 @@ export const ProjectsSection = () => {
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-1">{lecture.title}</h3>
+                <p className="text-sm font-medium text-primary mb-1">
+                  {lecture.role}
+                </p>
+                <p className="text-xs text-muted-foreground mb-4">
+                  {lecture.location}
+                </p>
                 <p className="text-muted-foreground text-sm mb-4 whitespace-pre-line leading-relaxed">
-                  {project.description}
+                  {lecture.description}
                 </p>
               </div>
             </div>
