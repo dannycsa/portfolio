@@ -5,7 +5,7 @@ import { HeroSection } from "../components/HeroSection";
 import { AboutSection } from "../components/AboutSection";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { SkillsSection } from "../components/SkillsSection";
-import { ProjectsSection } from "../components/ProjectsSection";
+import { LecturesSection } from "../components/LecturesSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
 import { MouseTrail } from "../components/MouseTrail";
@@ -27,6 +27,7 @@ export const Home = () => {
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
+        <LecturesSection />
         <SkillsSection />
         <ContactSection />
       </main>
