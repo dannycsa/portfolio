@@ -6,7 +6,7 @@ const lectures = [
     location: "Casablanca, Morocco · Apr 2024",
     description:
       "Presented 'Additive Manufacturing for Tire Treads Design for Outer Space Challenging Terrains' to 300+ attendees including ESA, Airbus, and European/African universities.",
-    image: "lectures/lecture1.png", // add your own image path
+    image: "lectures/CASICAM.jpeg", // add your own image path
     tags: ["Additive Manufacturing", "Aerospace", "International Lecture"],
   },
   {
@@ -17,7 +17,7 @@ const lectures = [
     location: "Mexico City, Mexico · Jul 2025",
     description:
       "Presented 'Mechanical Design and Testing of 3D-Printed Non-Pneumatic Wheels for Human-Powered Vehicles' to Latin American researchers and academic leaders.",
-    image: "lectures/lecture2.png",
+    image: "lectures/LACCEI.jpeg",
     tags: ["Non-Pneumatic Wheels", "3D Printing", "STEM"],
   },
   {
@@ -27,7 +27,7 @@ const lectures = [
     location: "La Paz, Bolivia · May 2024",
     description:
       "Delivered practical sessions on KUKA arm operation, KRL programming, and ROS integration.",
-    image: "lectures/lecture3.png",
+    image: "lectures/KUKA.jpeg",
     tags: ["Robotics", "KUKA", "Workshops"],
   },
 ];
