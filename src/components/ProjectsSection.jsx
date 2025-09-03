@@ -2,52 +2,63 @@ const projects = [
   {
     id: 1,
     title: "🛰 1U CubeSat Development",
-    description: `Led a team of five as GNC engineer to build a neural network-based trajectory predictor for Astrobee.
+    description: `Led GNC team developing a neural network-based trajectory predictor for Astrobee.
 Integrated it into ROS + Gazebo for control testing.
-Deployed payloads via STM32 on stratospheric balloon missions.`,
-    image: "projects/project1.png", // placeholder
+Deployed payloads via STM32 on stratospheric balloon missions for sensor validation.`,
+    image: "projects/cubesat.png",
     tags: ["CVXPy", "Simulink", "ROS", "STM32"],
   },
   {
     id: 2,
     title: "🤖 NASA HERC Point Optimization",
-    description: `Collaborating with UNIVA (Mexico) to develop LP and path-planning algorithms to maximize NASA HERC points.
-Defined decision variables, constraints, and simulations combining LP with graph heuristics.`,
-    image: "projects/project1.png",
-    tags: ["Linear Programming", "Path Planning", "Simulation"],
+    description: `Developing ML models to predict rover task success, time, energy, and points.
+Integrating probabilistic outputs into graph-based planners for optimized routes under user constraints.`,
+    image: "projects/point.png",
+    tags: ["ML", "Probabilistic Modeling", "Graph Optimization"],
   },
   {
     id: 3,
-    title: "🌿 Lichens Computer Vision Bioindicator",
-    description: `Developing a CV system to classify lichens as air-quality bioindicators.`,
-    image: "projects/project1.png",
+    title: "🌿  Computer Vision Segmentation Project",
+    description: `Creating custom datasets and implementing semantic segmentation and ML detection models, evaluated on real-world data.
+Integrating IoT-sourced environmental data from in-house prototypes for model validation.`,
+    image: "projects/tree.jpg",
     tags: ["Python", "OpenCV", "Machine Learning"],
   },
   {
     id: 4,
     title: "♟ Robotic Chess System with KUKA Arm",
-    description: `Founder and lead engineer of an autonomous chess system with KUKA arm, ROS control, and custom PCB chessboard.
+    description: `Founder and lead engineer of an autonomous chess system integrating KUKA robotic arm, ROS control, and custom PCB chessboard.
 Implemented motion planning, inverse kinematics, and EKI communication.`,
-    image: "projects/project1.png",
-    tags: ["ROS", "Python", "KUKA"],
+    image: "projects/rc.png",
+    tags: ["ROS", "Python", "KUKA", "CAD"],
   },
   {
     id: 5,
     title: "🔧 ABS Printing Optimization",
-    description: `Built two systems to improve industrial ABS printing: IoT-enabled enclosure reducing warping, and acetone vapor chamber achieving glossy finishes.
-Remote parameter control via mobile and Firebase dashboards.`,
-    image: "projects/project1.png",
-    tags: ["CAD", "MicroPython", "IoT"],
+    description: `Built IoT-enabled systems for industrial ABS printing: a thermally controlled enclosure to prevent warping and an acetone vapor chamber to improve surface finish.
+Implemented remote parameter control via mobile interface and Firebase dashboards.`,
+    image: "projects/abs.png",
+    tags: ["CAD", "MicroPython", "IoT", "Firebase"],
   },
   {
     id: 6,
     title: "🚀 NASA HERC 2024 Rover Design",
-    description: `Designed and fabricated rover tools, contributing to the "Most Improved Performance" award.
-Used SolidWorks, 3D printing, and CNC machining.`,
-    image: "projects/project1.png",
-    tags: ["SolidWorks", "3D Printing", "CNC"],
+    description: `Led rover tool design and fabrication, contributing to the "Most Improved Performance" award.
+Produced components via CAD modeling, 3D printing, and CNC machining.
+Led team to publish and present 3 peer-reviewed papers on NASA HERC innovations at international conferences.`,
+    image: "projects/task.png",
+    tags: ["SolidWorks", "3D Printing", "CNC", "Mechanical Design"],
+  },
+  {
+    id: 7,
+    title: "🔐 Biometric Registration and Access Control System",
+    description: `Led development of a biometric registration and entry/exit control system at workplace arrival points.
+Integrated database, software, and hardware modules for reliable employee authentication.`,
+    image: "projects/fingerprint.jpg",
+    tags: ["C#/.NET", "SQL Server", "Embedded Systems"],
   },
 ];
+
 
 export const ProjectsSection = () => {
   return (
