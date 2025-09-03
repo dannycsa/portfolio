@@ -52,16 +52,16 @@ const certifications = [
     description: "Certified SolidWorks Associate in CAD Design.",
     image: "certifications/cswa.png",
     tags: ["SolidWorks", "CAD"],
-    link: "https://www.certification-link.com/cswa",
+    link: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9LSKB6R83J",
   },
   {
     id: 2,
     title: "Additive Manufacturing Associate",
     issuer: "Dassault Systèmes, 2024",
     description: "Certified knowledge in additive manufacturing workflows.",
-    image: "certifications/additive.png",
+    image: "certifications/am.png",
     tags: ["3D Printing", "Manufacturing"],
-    link: "https://www.certification-link.com/additive",
+    link: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-6HQNZ38YWS",
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ const certifications = [
     description: "Certification in sustainability-driven engineering practices.",
     image: "certifications/sustainability.png",
     tags: ["Sustainability", "Engineering"],
-    link: "https://www.certification-link.com/sustainability",
+    link: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-EV4QFC5DTL",
   },
 ];
 
