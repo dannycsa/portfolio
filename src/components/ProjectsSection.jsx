@@ -58,6 +58,31 @@ Led 12 students to publish 3 peer-reviewed papers on NASA HERC innovations.`,
   },
 ];
 
+const lectures = [
+  {
+    id: 1,
+    title: "Casablanca International Conference on Additive Manufacturing",
+    role: "Lecturer (Virtual)",
+    location: "Casablanca, Morocco · Apr 2024",
+    description: "Presented 'Additive Manufacturing for Tire Treads Design for Outer Space Challenging Terrains' to 300+ attendees including ESA, Airbus, and European/African universities.",
+  },
+  {
+    id: 2,
+    title: "LACCEI International Multi-Conference on Engineering, Education and Technology",
+    role: "Lecturer (Virtual)",
+    location: "Mexico City, Mexico · Jul 2025",
+    description: "Presented 'Mechanical Design and Testing of 3D-Printed Non-Pneumatic Wheels for Human-Powered Vehicles' to Latin American researchers and academic leaders.",
+  },
+  {
+    id: 3,
+    title: "KUKA Robotic Arm Workshop – ITEC 2024",
+    role: "Workshop Lecturer",
+    location: "La Paz, Bolivia · May 2024",
+    description: "Delivered practical sessions on KUKA arm operation, KRL programming, and ROS integration.",
+  },
+];
+
+
 export const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 px-4 relative">
