@@ -47,15 +47,6 @@ Used SolidWorks, 3D printing, and CNC machining.`,
     image: "projects/project1.png",
     tags: ["SolidWorks", "3D Printing", "CNC"],
   },
-  {
-    id: 7,
-    title: "Volunteering, Outreach & Lectures",
-    description: `Presented Additive Manufacturing and NASA HERC projects internationally (Morocco, Mexico).
-Delivered KUKA workshops and STEM outreach across Bolivia.
-Led 12 students to publish 3 peer-reviewed papers on NASA HERC innovations.`,
-    image: "projects/project1.png",
-    tags: ["STEM Outreach", "Lectures", "Workshops"],
-  },
 ];
 
 export const ProjectsSection = () => {
