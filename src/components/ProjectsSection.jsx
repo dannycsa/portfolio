@@ -78,7 +78,7 @@ export const ProjectsSection = () => {
               key={project.id}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="w-full aspect-video overflow-hidden">
                 {project.image ? (
                   <img
                     src={project.image}
