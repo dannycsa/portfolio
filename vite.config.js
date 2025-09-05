@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
     tailwindcss({
       config: {
-        darkMode: "class", // 👈 enable class-based dark mode
+        darkMode: "class",
         content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
         theme: {
           extend: {},
