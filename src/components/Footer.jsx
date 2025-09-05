@@ -6,22 +6,21 @@ const navItems = [
 
 export const Footer = () => {
   const handleNavClick = (href) => {
-    setIsMenuOpen(false);
-    
     setTimeout(() => {
       const element = document.querySelector(href);
       if (element) {
         const offset = 80; // Adjust this value based on your navbar height
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - offset;
-        
+
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }
     }, 100);
   };
+
 
   return (
     <footer className="py-12 px-4 bg-card border-t border-border mt-12 pt-8">
@@ -47,8 +46,10 @@ export const Footer = () => {
           &copy; {new Date().getFullYear()} Daniel Callata - All rights reserved.
         </p>
 
-        {/* Back to top button (with smooth scroll like navbar) */}
-        <a href="#hero" onClick={(e) => {
+        {/* Back to top button */}
+        <a
+          href="#hero"
+          onClick={(e) => {
             e.preventDefault();
             handleNavClick("#hero");
           }}
