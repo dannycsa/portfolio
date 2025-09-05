@@ -16,7 +16,7 @@ export const Footer = () => {
           <img
             src="/portfolio/imgs/logo_white.png"
             alt="Daniel Callata Logo"
-            className="h-40 w-auto dark:hidden"
+            className="h-40 w-auto hidden dark:block"
           />
         </div>
 
