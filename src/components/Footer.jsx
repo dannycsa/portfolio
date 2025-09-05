@@ -1,6 +1,23 @@
 import { ArrowUp } from "lucide-react";
 
 export const Footer = () => {
+  // Reuse the smooth scrolling logic from Navbar
+  const handleNavClick = useCallback((href) => {
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        const offset = 80; // Adjust based on navbar height
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
+  }, []);
+
   return (
     <footer className="py-12 px-4 bg-card border-t border-border mt-12 pt-8">
       <div className="flex flex-col items-center gap-4">
@@ -25,9 +42,13 @@ export const Footer = () => {
           &copy; {new Date().getFullYear()} Daniel Callata - All rights reserved.
         </p>
 
-        {/* Back to top button */}
+        {/* Back to top button (with smooth scroll like navbar) */}
         <a
           href="#hero"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick("#hero");
+          }}
           className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
         >
           <ArrowUp size={20} />
