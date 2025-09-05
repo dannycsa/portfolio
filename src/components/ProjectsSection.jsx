@@ -46,7 +46,7 @@ Implemented remote parameter control via mobile interface and Firebase dashboard
     description: `Led rover tool design and fabrication, contributing to the "Most Improved Performance" award.
 Produced components via CAD modeling, 3D printing, and CNC machining.
 Led team to publish and present 3 peer-reviewed papers on NASA HERC innovations at international conferences.`,
-    image: "projects/task.png",
+    image: "projects/rover.png",
     tags: ["SolidWorks", "3D Printing", "CNC", "Mechanical Design"],
   },
   {
