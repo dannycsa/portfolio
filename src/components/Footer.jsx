@@ -42,13 +42,9 @@ export const Footer = () => {
           &copy; {new Date().getFullYear()} Daniel Callata - All rights reserved.
         </p>
 
-        {/* Back to top button (with smooth scroll like navbar) */}
+        {/* Back to top button */}
         <a
           href="#hero"
-          onClick={(e) => {
-            e.preventDefault();
-            handleNavClick("#hero");
-          }}
           className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
         >
           <ArrowUp size={20} />
