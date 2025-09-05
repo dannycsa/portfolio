@@ -1,4 +1,4 @@
-import { Cpu, Beaker, Briefcase } from "lucide-react"; // CPU for computer vision
+import { Cpu, Beaker, Eye, Box } from "lucide-react"; // CPU for computer vision
 
 export const AboutSection = () => {
 const handleNavClick = (href) => {
@@ -57,7 +57,7 @@ const handleNavClick = (href) => {
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Robotics & AI */}
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
@@ -77,12 +77,12 @@ const handleNavClick = (href) => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Cpu className="h-6 w-6 text-primary" />
+                  <Eye className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">Computer Vision</h4>
                   <p className="text-muted-foreground">
-                    Implementing visual recognition, object detection, and image analysis in robotics and AI.
+                    Implementing visual recognition, object detection, and image analysis in robotics, AI, and biotech applications.
                   </p>
                 </div>
               </div>
@@ -92,7 +92,7 @@ const handleNavClick = (href) => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Beaker className="h-6 w-6 text-primary" />
+                  <Box className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">Additive Manufacturing</h4>
