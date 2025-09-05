@@ -1,5 +1,9 @@
 import { ArrowUp } from "lucide-react";
 
+const navItems = [
+  { name: "Home", href: "#hero" },
+];
+
 export const Footer = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
