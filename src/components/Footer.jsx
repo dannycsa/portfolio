@@ -45,9 +45,7 @@ export const Footer = () => {
         </p>
 
         {/* Back to top button (with smooth scroll like navbar) */}
-        <a
-          href="#hero"
-          onClick={(e) => {
+        <a href="#hero" onClick={(e) => {
             e.preventDefault();
             handleNavClick("#hero");
           }}
