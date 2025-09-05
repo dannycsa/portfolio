@@ -8,13 +8,13 @@ export const Footer = () => {
         <div className="flex items-center justify-center">
           {/* Light mode logo */}
           <img
-            src="/portfolio/imgs/logo_black.png"
+            src="/portfolio/imgs/logo_white.png"
             alt="Daniel Callata Logo"
             className="h-40 w-auto dark:hidden"
           />
           {/* Dark mode logo */}
           <img
-            src="/portfolio/imgs/logo_white.png"
+            src="/portfolio/imgs/logo_black.png"
             alt="Daniel Callata Logo"
             className="h-40 w-auto hidden dark:block"
           />
