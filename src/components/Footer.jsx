@@ -1,7 +1,19 @@
 import { ArrowUp } from "lucide-react";
 
 export const Footer = () => {
-  // Reuse the smooth scrolling logic from Navbar
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Function to handle smooth scrolling with offset
   const handleNavClick = (href) => {
     setIsMenuOpen(false);
     
