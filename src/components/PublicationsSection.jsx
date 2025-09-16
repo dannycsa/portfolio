@@ -4,13 +4,13 @@ const publications = [
   {
     id: 1,
     title:
-      "Mechanical Design and Testing of 3D-Printed Non-Pneumatic Wheels for Human-Powered Vehicles: A NASA HERC Case Study",
+      "Non-Pneumatic Wheel design performance for Human Powered Vehicles. Case: NASA HERC",
     authorRole: "1st Author",
     conference:
       "23rd LACCEI International Multi-Conference for Engineering, Education and Technology · Jul 2025",
     description:
       "Presented the design, fabrication, and performance evaluation of 3D-printed non-pneumatic wheels for human-powered vehicles. Focused on NASA HERC mission-oriented terrain challenges.",
-    image: "publications/LACCEI_wheel.jpeg", // add your own image
+    image: "publications/design.png",
     tags: ["3D Printing", "Non-Pneumatic Wheels", "NASA HERC"],
     link: "https://www.researchgate.net/publication/394894775_Non-Pneumatic_Wheel_design_performance_for_Human_Powered_Vehicles_Case_NASA_HERC",
   },
@@ -23,7 +23,7 @@ const publications = [
       "Casablanca International Conference on Additive Manufacturing (CASICAM) · Apr 2025",
     description:
       "Explored tread pattern optimization and additive manufacturing techniques for extraterrestrial rover wheels in NASA’s Human Exploration Rover Challenge (HERC).",
-    image: "publications/CASICAM_tread.jpeg",
+    image: "publications/am_paper.png",
     tags: ["Additive Manufacturing", "Aerospace", "Robotics"],
     publicationPending: true, // not indexed yet
   },
@@ -36,7 +36,7 @@ const publications = [
       "IEEE Integrated STEM Education Conference (ISEC) · Mar 2025",
     description:
       "Analyzed STEM outreach strategies and program management of Bolivia’s NASA HERC initiatives, showcasing inclusive approaches across diverse regions.",
-    image: "publications/ISEC_STEM.jpeg",
+    image: "publications/stem.png",
     tags: ["STEM", "Education", "Outreach"],
     link: "https://www.researchgate.net/publication/395363821_STEM_program_management_and_outreach_in_different_locations_of_a_country_Case_Bolivian_NASA_HERC_STEM_activities",
   },
