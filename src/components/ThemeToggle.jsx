@@ -6,37 +6,56 @@ export const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
+    // Try to load from localStorage first
     const storedTheme = localStorage.getItem("theme");
+
     if (storedTheme) {
-      setIsDarkMode(storedTheme === "dark");
-      document.documentElement.classList.toggle("dark", storedTheme === "dark");
+      if (storedTheme === "dark") {
+        setIsDarkMode(true);
+        document.documentElement.classList.add("dark");
+      } else {
+        setIsDarkMode(false);
+        document.documentElement.classList.remove("dark");
+      }
     } else {
+      // If no theme stored, fallback to system preference
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setIsDarkMode(prefersDark);
-      document.documentElement.classList.toggle("dark", prefersDark);
-      localStorage.setItem("theme", prefersDark ? "dark" : "light");
+      if (prefersDark) {
+        setIsDarkMode(true);
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        setIsDarkMode(false);
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      }
     }
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = isDarkMode ? "light" : "dark";
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-    localStorage.setItem("theme", newTheme);
-    setIsDarkMode(newTheme === "dark");
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDarkMode(true);
+    }
   };
 
   return (
     <button
       onClick={toggleTheme}
       className={cn(
-        "p-2 rounded-full transition-colors duration-300 hover:bg-accent",
-        "focus:outline-none"
+        "fixed max-sm:hidden top-10 right-10 z-50 p-2 rounded-full transition-colors duration-300",
+        "focus:outlin-hidden"
       )}
     >
       {isDarkMode ? (
-        <Sun className="h-5 w-5 text-yellow-400" />
+        <Sun className="h-6 w-6 text-yellow-50" />
       ) : (
-        <Moon className="h-5 w-5 text-blue-600" />
+        <Moon className="h-6 w-6 text-blue-50" />
       )}
     </button>
   );
