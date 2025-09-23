@@ -131,25 +131,7 @@ export const Navbar = () => {
               ))}
             </div>
           </div>
-          {/* desktop nav */}
-          <div className="hidden md:flex items-center space-x-6">
-            {navItems.map((item, key) => (
-              <a
-                key={key}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.href);
-                }}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
-              >
-                {item.name}
-              </a>
-            ))}
-            {/* Theme toggle button */}
-            <ThemeToggle />
-          </div>
-
+          
         </div>
       </nav>
       
