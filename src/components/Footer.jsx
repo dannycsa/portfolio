@@ -35,7 +35,7 @@ export const Footer = () => {
           />
           {/* Dark mode logo */}
           <img
-            src="/portfolio/imgs/logo_black.png"
+            src="imgs/logo_black.png"
             alt="Daniel Callata Logo"
             className="h-40 w-auto hidden dark:block"
           />
