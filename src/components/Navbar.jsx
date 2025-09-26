@@ -67,13 +67,13 @@ export const Navbar = () => {
           }}>
             {/* Light mode logo - shown in light mode, hidden in dark mode */}
             <img
-              src="/portfolio/imgs/logo_white.png"
+              src="imgs/logo_white.png"
               alt="Logo"
               className="h-30 w-auto object-contain dark:hidden"
             />
             {/* Dark mode logo - hidden in light mode, shown in dark mode */}
             <img
-              src="/portfolio/imgs/logo_black.png"
+              src="imgs/logo_black.png"
               alt="Logo"
               className="h-30 w-auto object-contain hidden dark:block"
             />
