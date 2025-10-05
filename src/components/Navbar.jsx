@@ -6,7 +6,7 @@ const navItems = [
   { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
-  // { name: "Lectures", href: "#lectures" },
+ { name: "Lectures", href: "#lectures" },
   { name: "Publications", href: "#publications" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
@@ -60,22 +60,14 @@ export const Navbar = () => {
         }}
       >
         <div className="container flex items-center justify-between">
-          {/* Logo with dark/light mode support - Fixed */}
           <a href="#hero" className="flex items-center" onClick={(e) => {
             e.preventDefault();
             handleNavClick("#hero");
           }}>
-            {/* Light mode logo - shown in light mode, hidden in dark mode */}
-            <img
-              src="imgs/logo_white.png"
-              alt="Logo"
-              className="h-30 w-auto object-contain dark:hidden"
-            />
-            {/* Dark mode logo - hidden in light mode, shown in dark mode */}
             <img
               src="imgs/logo_black.png"
               alt="Logo"
-              className="h-30 w-auto object-contain hidden dark:block"
+              className="h-30 w-auto object-contain"
             />
           </a>
 
