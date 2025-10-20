@@ -6,7 +6,6 @@ export const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Try to load from localStorage first
     const storedTheme = localStorage.getItem("theme");
 
     if (storedTheme) {
@@ -18,7 +17,6 @@ export const ThemeToggle = () => {
         document.documentElement.classList.remove("dark");
       }
     } else {
-      // If no theme stored, fallback to system preference
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       if (prefersDark) {
         setIsDarkMode(true);
