@@ -76,7 +76,7 @@ const certifications = [
   {
     id: 4,
     title: "Supply Chain Management Specialization",
-    issuer: "Coursera / Rutgers, The State University of New Jersey",
+    issuer: "Rutgers, The State University of New Jersey",
     description:
       "Specialization in Supply Chain Management consisting of five courses covering logistics, operations, planning, sourcing, and strategy.",
     image: "certifications/supply_chain.jpeg", 
