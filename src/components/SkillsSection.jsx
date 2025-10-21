@@ -76,7 +76,7 @@ const certifications = [
   {
     id: 4,
     title: "Supply Chain Management Specialization",
-    issuer: "Coursera / Rutgers, The State University of New Jersey — 2025",
+    issuer: "Coursera / Rutgers, The State University of New Jersey",
     description:
       "Specialization in Supply Chain Management consisting of five courses covering logistics, operations, planning, sourcing, and strategy.",
     image: "certifications/supply_chain.jpeg", 
@@ -116,93 +116,7 @@ export const SkillsSection = () => {
           Skills & <span className="text-primary">Certifications</span>
         </h2>
 
-        {/* LANGUAGES + SOFT SKILLS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-card p-6 rounded-lg shadow-xs">
-            <h3 className="font-semibold text-xl mb-4">Languages</h3>
-            <ul className="space-y-2">
-              {languages.map((lang, i) => (
-                <li key={i} className="flex justify-between">
-                  <span>{lang.name}</span>
-                  <span className="text-muted-foreground">{lang.level}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="bg-card p-6 rounded-lg shadow-xs">
-            <h3 className="font-semibold text-xl mb-4">Soft Skills</h3>
-            <div className="flex flex-wrap gap-2">
-              {softSkills.map((skill, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 rounded-full bg-secondary/50 text-sm"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* SKILLS FILTER */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
-          {categories.map((category, key) => (
-            <button
-              key={key}
-              onClick={() => setActiveCategory(category)}
-              className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
-                activeCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-foreground hover:bg-secondary/80"
-              )}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        {/* CLEAN SKILL LIST (text-first, compact) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {/* Group skills by category for nicer layout */}
-          {["programming", "cad", "tools"].map((cat) => {
-            const items =
-              activeCategory === "all"
-                ? skills.filter((s) => s.category === cat)
-                : filteredSkills.filter((s) => s.category === cat);
-            return (
-              <div key={cat} className="bg-card p-6 rounded-lg shadow-xs">
-                <h4 className="font-semibold text-lg mb-4 capitalize">
-                  {cat === "programming" ? "Programming & Frameworks" : cat === "cad" ? "CAD & Manufacturing" : "Tools & Hardware"}
-                </h4>
-
-                <ul className="space-y-3">
-                  {items.length === 0 && (
-                    <li className="text-muted-foreground text-sm">No items</li>
-                  )}
-                  {items.map((skill, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center justify-between border-b last:border-b-0 py-2"
-                    >
-                      <span className="text-sm">{skill.name}</span>
-                      <span
-                        title={`${skill.level}%`}
-                        className="text-xs font-medium px-2 py-1 rounded-full bg-secondary/70 text-secondary-foreground"
-                      >
-                        {levelToLabel(skill.level)}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
-
         {/* CERTIFICATIONS (like lectures/projects) */}
-        <h3 className="text-2xl font-bold mb-8 text-center">Certifications</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certifications.map((cert) => (
             <div
