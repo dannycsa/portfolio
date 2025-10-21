@@ -72,9 +72,36 @@ const certifications = [
     tags: ["Sustainability", "Engineering"],
     link: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-EV4QFC5DTL",
   },
+  // NEW: Supply Chain Specialization
+  {
+    id: 4,
+    title: "Supply Chain Management Specialization",
+    issuer: "Coursera / Rutgers, The State University of New Jersey — 2025",
+    description:
+      "Specialization in Supply Chain Management consisting of five courses covering logistics, operations, planning, sourcing, and strategy.",
+    image: "certifications/supply_chain.jpeg", 
+    tags: ["Supply Chain", "Logistics"],
+    link: "https://coursera.org/share/1a5e739d594e63b4502801774ce2e72b",
+    details: {
+      courses: [
+        "Supply Chain Logistics",
+        "Supply Chain Operations",
+        "Supply Chain Planning",
+        "Supply Chain Sourcing",
+        "Supply Chain Management Strategy",
+      ],
+    },
+  },
 ];
 
 const categories = ["all", "programming", "cad", "tools"];
+
+const levelToLabel = (level) => {
+  if (level >= 85) return "Expert";
+  if (level >= 70) return "Proficient";
+  if (level >= 50) return "Familiar";
+  return "Beginner";
+};
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -86,7 +113,7 @@ export const SkillsSection = () => {
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary"> Skills & Certifications</span>
+          Skills & <span className="text-primary">Certifications</span>
         </h2>
 
         {/* LANGUAGES + SOFT SKILLS */}
@@ -119,7 +146,7 @@ export const SkillsSection = () => {
         </div>
 
         {/* SKILLS FILTER */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           {categories.map((category, key) => (
             <button
               key={key}
@@ -136,29 +163,42 @@ export const SkillsSection = () => {
           ))}
         </div>
 
-        {/* TECHNICAL SKILLS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          {filteredSkills.map((skill, key) => (
-            <div
-              key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
-            >
-              <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg">{skill.name}</h3>
+        {/* CLEAN SKILL LIST (text-first, compact) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {/* Group skills by category for nicer layout */}
+          {["programming", "cad", "tools"].map((cat) => {
+            const items =
+              activeCategory === "all"
+                ? skills.filter((s) => s.category === cat)
+                : filteredSkills.filter((s) => s.category === cat);
+            return (
+              <div key={cat} className="bg-card p-6 rounded-lg shadow-xs">
+                <h4 className="font-semibold text-lg mb-4 capitalize">
+                  {cat === "programming" ? "Programming & Frameworks" : cat === "cad" ? "CAD & Manufacturing" : "Tools & Hardware"}
+                </h4>
+
+                <ul className="space-y-3">
+                  {items.length === 0 && (
+                    <li className="text-muted-foreground text-sm">No items</li>
+                  )}
+                  {items.map((skill, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center justify-between border-b last:border-b-0 py-2"
+                    >
+                      <span className="text-sm">{skill.name}</span>
+                      <span
+                        title={`${skill.level}%`}
+                        className="text-xs font-medium px-2 py-1 rounded-full bg-secondary/70 text-secondary-foreground"
+                      >
+                        {levelToLabel(skill.level)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: skill.level + "%" }}
-                />
-              </div>
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* CERTIFICATIONS (like lectures/projects) */}
@@ -201,6 +241,21 @@ export const SkillsSection = () => {
                 <p className="text-muted-foreground text-sm mb-4">
                   {cert.description}
                 </p>
+
+                {/* If the special Supply Chain cert has details, show a compact legend */}
+                {cert.details && (
+                  <div className="text-sm text-muted-foreground mb-4">
+                    <strong className="mt-2 block">Course Certificates Completed:</strong>
+                    <ul className="list-disc list-inside mt-1">
+                      {cert.details.courses.map((c, idx) => (
+                        <li key={idx} className="text-sm text-muted-foreground">
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {cert.link && (
                   <a
                     href={cert.link}
